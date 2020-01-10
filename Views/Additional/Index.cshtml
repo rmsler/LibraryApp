@@ -1,0 +1,19 @@
+﻿@using Library2._0.ViewModels
+@model HomeViewModel
+
+
+
+@foreach (var book in Model.Books)
+{
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            <div class="caption">
+                <h3 class="pull-right">@(book.State == false ? "Not available" : "Available")</h3>
+                <h3>
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@book.Id">@book.Name</a>
+                </h3>
+                <p>@book.Description</p>
+            </div>
+        </div>
+    </div>
+}

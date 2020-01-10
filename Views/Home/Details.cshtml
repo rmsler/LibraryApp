@@ -1,0 +1,16 @@
+﻿@model Book
+
+<h2>@Model.Name</h2>
+
+<div class="thumbnail">
+    <div class="caption">
+        <h3 class="pull-right">@(Model.State == false ? "Not available" : "Available")</h3>
+        <h3>
+            <a href="#">@Model.Name</a>
+        </h3>
+        <h3>
+            <a class="pull-right" asp-controller="Home" asp-action="StatusChange" asp-route-id="@Model.Id">Change state</a>
+        </h3>
+        <p>@Model.Description</p>
+    </div>
+</div>
